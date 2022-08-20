@@ -6,3 +6,25 @@ build-backend = "flit_core.buildapi"
 name = "witertools"
 authors = [{name = "Doug Ransom", email = "doug@ransom.vip"}]
 dynamic = ["version", "description"]
+readme = "README.md"
+requires-python = ">=3.0"
+
+[project.urls]
+source="https://github.com/dougransom/witertools"
+
+[tool.flit.sdist]
+exclude=['test/']
+
+[project.optional-dependencies]
+test = [
+    "pytest >=7.1.2",
+    "pytest-cov",
+    "more-itertools",
+]
+# pyproject.toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "test",
+ ]
