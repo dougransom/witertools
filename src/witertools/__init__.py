@@ -2,7 +2,7 @@
 throughout your code when you need a list instead of an interator.  
 
 """
-__version__="0.0.0"
+__version__="0.0.1"
 
 import builtins
 from .iterator_to_list import iterator_to_list_function,iterator_name_to_list_function
