@@ -8,6 +8,9 @@ authors = [{name = "Doug Ransom", email = "doug@ransom.vip"}]
 dynamic = ["version", "description"]
 readme = "README.md"
 requires-python = ">=3.0"
+classifiers = [
+      "License :: OSI Approved :: MIT License",
+      ]
 
 [project.urls]
 source="https://github.com/dougransom/witertools"
