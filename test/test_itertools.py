@@ -16,9 +16,9 @@ def test_chain():
     l=i.chain(iter([1,2]),iter([3,4]))
     assert l==[1,2,3,4]
 
-#@p.mark.parametrize("included_function",finite_iterators)
-#def test_included_functions(included_function):
-#    assert  hasattr(i,included_function)
+@p.mark.parametrize("included_function",finite_iterators)
+def test_included_functions(included_function):
+    assert  hasattr(i,included_function)
 
 if __name__ == "__main__":
     pytest.main(['test_itertools.py'])

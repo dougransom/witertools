@@ -17,21 +17,21 @@ def test_list_iterator_to_list():
     
 def test_iter_with_argument_to_list():
     #case where iterator takes one argument
-    fn=l.iterator_to_list_function(iter,sample_int_list)
-    output_list = fn()
+    fn=l.iterator_to_list_function(iter)
+    output_list = fn(sample_int_list)
     assert output_list == sample_int_list
 
 
 def test_iter_with_multiple_arguments_to_list():
     #case where iterator takes multiple arguments
     n=60  #number of arguments to pass
-    fn=l.iterator_to_list_function(i.chain,(sample_int_list)*n)
-    output_list=fn()
+    output_list=l.iterator_to_list_function(i.chain)(*map(iter,[sample_int_list]*n))
     assert output_list == sample_int_list*60
 
 def test_iter_with_kwargs():
-    fn=l.iterator_to_list_function(sample_kw_iterator,"dog","chicken",snacks="kibble", age=103)    
-    output_list=fn()
+    fn=l.iterator_to_list_function(sample_kw_iterator)
+      
+    output_list=fn("dog","chicken",snacks="kibble", age=103)  
     assert output_list[0:2]==["dog","chicken"]
     #order of kwargs will be undefined.
     assert ('age',103) in output_list
