@@ -7,7 +7,10 @@ witertools provides:
 - wrappers around the functions in more_itertools 
 
 The motivation as that itertools and more-itertools in particular have functions that return iterators, but very frequently 
-the desired result is a list.  
+the desired result is a list. Over and over in code you will see repeated code of calling list on the result of a function
+that produces an interator.  You will even see it in most examples in the [more-itertools api](https://more-itertools.readthedocs.io/en/stable/api.html).  
+
+
 
 ## Wrappers Around Functions that Return Iterators
 In witertools:
